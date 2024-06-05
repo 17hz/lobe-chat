@@ -17,6 +17,7 @@ import OpenRouter from './OpenRouter';
 import Perplexity from './Perplexity';
 import Qwen from './Qwen';
 import TogetherAI from './TogetherAI';
+import Wenxin from './Wenxin';
 import ZeroOne from './ZeroOne';
 import Zhipu from './Zhipu';
 import Footer from './components/Footer';
@@ -39,8 +40,9 @@ const Page = () => {
       <Minimax />
       <Mistral />
       <Moonshot />
-      <Zhipu />
+      <Wenxin />
       <ZeroOne />
+      <Zhipu />
       <Footer />
     </Flexbox>
   );
