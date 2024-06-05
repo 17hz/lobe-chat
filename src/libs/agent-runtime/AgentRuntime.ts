@@ -24,6 +24,7 @@ import {
   ModelProvider,
   TextToImagePayload,
 } from './types';
+import { LobeWenxinAI, LobeWenxinAIParams } from './wenxin';
 import { LobeZeroOneAI } from './zeroone';
 import { LobeZhipuAI } from './zhipu';
 
@@ -115,6 +116,7 @@ class AgentRuntime {
       perplexity: Partial<ClientOptions>;
       qwen: Partial<ClientOptions>;
       togetherai: Partial<ClientOptions>;
+      wenxin: Partial<LobeWenxinAIParams>;
       zeroone: Partial<ClientOptions>;
       zhipu: Partial<ClientOptions>;
     }>,
@@ -210,6 +212,11 @@ class AgentRuntime {
 
       case ModelProvider.Qwen: {
         runtimeModel = new LobeQwenAI(params.qwen ?? {});
+        break;
+      }
+
+      case ModelProvider.Wenxin: {
+        runtimeModel = new LobeWenxinAI(params.wenxin ?? {});
         break;
       }
     }
