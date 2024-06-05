@@ -9,6 +9,29 @@ import { ModelProvider } from '@/libs/agent-runtime';
 import ProviderConfig from '../components/ProviderConfig';
 import Checker from './Checker';
 
+export const useOllamaProvider = () => {
+  const { t } = useTranslation('modelProvider');
+
+  return {
+    checkerItem: {
+      children: <Checker />,
+      desc: t('ollama.checker.desc'),
+      label: t('ollama.checker.title'),
+      minWidth: undefined,
+    },
+    modelList: { showModelFetcher: true },
+    provider: ModelProvider.Ollama,
+    proxyUrl: {
+      desc: t('ollama.endpoint.desc'),
+      placeholder: 'http://127.0.0.1:11434',
+      title: t('ollama.endpoint.title'),
+    },
+    showApiKey: false,
+    showBrowserRequest: true,
+    title: <Ollama.Combine size={28} />,
+  };
+};
+
 const OllamaProvider = memo(() => {
   const { t } = useTranslation('modelProvider');
 
