@@ -18,7 +18,7 @@ export const HOTKEYS_REGISTRATION: HotkeyRegistration = [
   {
     group: HotkeyGroupEnum.Essential,
     id: HotkeyEnum.Search,
-    keys: combineKeys([KeyEnum.Mod, 'k']),
+    keys: combineKeys([KeyEnum.Mod, 'p']),
     scopes: [HotkeyScopeEnum.Global],
   },
   {
